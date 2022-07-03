@@ -13,30 +13,15 @@
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{{object.nombre}}</h5>
-            <p class="card-text">{{object.ingrediente_1}}</p>
-            <p class="card-text">{{object.cantidad_1}} piezas</p>
-            <p class="card-text">{{object.ingrediente_2}}</p>
-            <p class="card-text">{{object.cantidad_2}} piezas</p>
-            <p class="card-text">{{object.ingrediente_3}}</p>
-            <p class="card-text">{{object.cantidad_3}} piezas</p>
-            <p class="card-text">{{object.ingrediente_4}}</p>
-            <p class="card-text">{{object.cantidad_4}} piezas</p>
-            <p class="card-text">{{object.ingrediente_5}}</p>
-            <p class="card-text">{{object.cantidad_5}} piezas</p>
-            <p class="card-text">{{object.ingrediente_6}}</p>
-            <p class="card-text">{{object.cantidad_6}} piezas</p>
-            <p class="card-text">{{object.ingrediente_7}}</p>
-            <p class="card-text">{{object.cantidad_7}} piezas</p>
-            <p class="card-text">{{object.ingrediente_8}}</p>
-            <p class="card-text">{{object.cantidad_8}} piezas</p>
-            <p class="card-text">{{object.ingrediente_9}}</p>
-            <p class="card-text">{{object.cantidad_9}} piezas</p>
-            <p class="card-text">{{object.ingrediente_10}}</p>
-            <p class="card-text">{{object.cantidad_10}} piezas</p>
+            <h4 class="card-title">{{object.nombre}}</h4>
+            <h5>Tipo de receta</h5>
+            <p class="card-text">{{object.tipo}}</p>
+            <h5>Ingredientes</h5>
+            <p class="card-text">{{object.ing_y_cant}} </p>
+            <h5>Paso a paso</h5>
             <p class="card-text">{{object.procedimiento}}</p>
-            <a href="/recetas/actualizar-receta-7a10/{{object.id}}/" class="btn btn-primary">Editar</a>
-            <a href="/recetas/eliminar-receta-7a10/{{object.id}}/" class="btn btn-danger">Eliminar</a>
+            <a href="/recetas/actualizar-receta/{{object.id}}/" class="btn btn-primary">Editar</a>
+            <a href="/recetas/eliminar-receta/{{object.id}}/" class="btn btn-danger">Eliminar</a>
         </div>
     </div>
 

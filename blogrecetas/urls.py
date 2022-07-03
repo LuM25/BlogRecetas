@@ -22,8 +22,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Index.as_view(), name = 'index'),
-    path('contacto/', views.Contacto.as_view(), name = 'contacto'),
+    path('', Index.as_view(), name = 'index'),
+    path('contacto/', Contacto.as_view(), name = 'contacto'),
     path('recetas/', include('recetas.urls', namespace = 'recetas')),
     re_path('usuarios/', include('users.urls', namespace = 'users_app')),
 

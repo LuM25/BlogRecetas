@@ -70,5 +70,5 @@ def buscar_receta(request):
         context = {'recetas':recetas}
     else:
         context = {'errors':'No se encontro el producto'}
-    return render(request, 'buscar_receta_1a3.html', context = context)
+    return render(request, 'buscar_receta.html', context = context)
 

@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
-from blogrecetas.views import Index, Contacto,AboutUs
-from . import views
+from blogrecetas.views import Index, Contacto,AboutUs 
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
@@ -25,7 +26,7 @@ urlpatterns = [
     path('', Index.as_view(), name = 'index'),
     path('contacto/', Contacto.as_view(), name = 'contacto'),
     path('recetas/', include('recetas.urls', namespace = 'recetas')),
-    path('aboutus/', AboutUs.as_view(), name = 'about_us'),
+    path('about_us/', AboutUs.as_view(), name = 'about_us'),
     re_path('usuarios/', include('users.urls', namespace = 'users_app')),
 
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

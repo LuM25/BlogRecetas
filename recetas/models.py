@@ -7,6 +7,15 @@ class Receta(models.Model):
     tipo = models.CharField(max_length = 30)
     ing_y_cant = models.CharField(max_length = 30)
     procedimiento = models.CharField(max_length = 30)
+    is_active = models.BooleanField(default = True)
+    image = models.ImageField(upload_to = 'receta', blank = True , null = True)
+
+    class Meta:
+        verbose_name = 'producto'
+        verbose_name_plural = 'productos'
+
+    def __str__(self):
+        return self.nombre
 
 #class Receta(models.Model):
 #    nombre = models.CharField(max_length = 20)

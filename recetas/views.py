@@ -19,7 +19,7 @@ class CrearReceta(LoginRequiredMixin, CreateView):
 
 ########################################################### LIST VIEW ########################################################################
 
-class ListaRecetas(LoginRequiredMixin, ListView):
+class ListaRecetas(ListView):
     model = Receta
     template_name= 'recetas.html'
     login_url = reverse_lazy('users_app:user_login')
@@ -33,7 +33,7 @@ class ListaRecetas(LoginRequiredMixin, ListView):
 
 ########################################################### DETAIL VIEW ######################################################################
 
-class DetailReceta(LoginRequiredMixin, DetailView):
+class DetailReceta(DetailView):
     model = Receta
     template_name = 'detail_receta.html'
     login_url = reverse_lazy('users_app:user_login')

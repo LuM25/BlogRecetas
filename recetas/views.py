@@ -22,7 +22,7 @@ class CrearReceta(LoginRequiredMixin, CreateView):
 class ListaRecetas(ListView):
     model = Receta
     template_name= 'recetas.html'
-    login_url = reverse_lazy('users_app:user_login')
+    queryset = Receta.objects.filter(is_active = True)
     
     def get_context_data(self):
         context = {}
@@ -36,7 +36,7 @@ class ListaRecetas(ListView):
 class DetailReceta(DetailView):
     model = Receta
     template_name = 'detail_receta.html'
-    login_url = reverse_lazy('users_app:user_login')
+   
 
 ########################################################### DELETE VIEW ######################################################################
 

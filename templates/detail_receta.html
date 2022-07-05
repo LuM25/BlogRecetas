@@ -13,6 +13,9 @@
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
+            {% if receta.image_recetas %}
+            <img src="{{receta.image_recetas.url}}" class="card-img-top" >
+            {% endif %}   
             <h4 class="card-title">{{object.nombre}}</h4>
             <h5>Tipo de receta</h5>
             <p class="card-text">{{object.tipo}}</p>

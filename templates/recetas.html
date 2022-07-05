@@ -17,7 +17,7 @@
     
     <div class="card" style="width: 18rem;">
         {% if receta.image_recetas %}
-        <img src="{% static 'media/image_recetas' %} " class="card-img-top" >
+        <img src="{{receta.image_recetas.url}}" class="card-img-top" >
         {% endif %}    
         <div class="card-body">
             <h5 class="card-title">{{receta.nombre}}</h5>

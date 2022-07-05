@@ -15,11 +15,14 @@
             <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
+                        {% if receta.image_recetas %}
+                         <img src="{{receta.image_recetas.url}}" class="card-img-top" >
+                        {% endif %} 
                         <h5 class="card-title">{{receta.nombre}}</h5>
                         <p class="card-text">{{receta.tipo}}</p>
                         <p class="card-text">{{receta.ing_y_cant}}</p>
                         <p class="card-text">{{receta.procedimiento}}</p>
-                        <a href="#" class="btn btn-primary">Descargar</a>
+                        <a href="/recetas/detail-receta/{{receta.id}}/" class="btn btn-primary">Ver mas!</a>
                     </div>
                 </div>
             </div>

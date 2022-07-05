@@ -30,17 +30,13 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/recetas/crear-receta/">Crear Receta</a>
+                    </li>   
+                    <li class="nav-item">             
+                        <a style="margin-left: 45rem;" class="nav-link" href="{% url 'users_app:user_register' %}">Registrarse</a>
                     </li>                
-                    
-                    <li class="nav-item">
-                        <a style="margin-left: 30rem;" class="nav-link" href="{% url 'users_app:user_login' %}">LogIn</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a style="margin-left: 5rem;" class="nav-link" href="{% url 'users_app:user_register' %}">Registrarse</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users_app:user_login' %}">Logout</a>
-                    </li>                   
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'users_app:user_panel' %}">Panel de Usuario</a> 
+                        </li>                
                     
 
                 </ul>

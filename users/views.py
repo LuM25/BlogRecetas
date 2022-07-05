@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django. urls import reverse_lazy, reverse
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
@@ -43,15 +43,9 @@ class LoginUser(FormView):
         return super(LoginUser, self).form_valid(form)
 
 
-class LogoutView(View):
-
-    def get(self, request, *args, **kargs):
-        logout(request)
-        return HttpResponseRedirect(
-            reverse(
-                'users_app:user_login'
-            )
-        )
+def logout_view(request):
+    logout(request)
+    return redirect('index')
 
 
 class UpdatePasswordView(LoginRequiredMixin, FormView):

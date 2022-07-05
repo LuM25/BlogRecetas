@@ -3,12 +3,14 @@ from django. urls import reverse_lazy, reverse
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, CreateView
 from django.views.generic.edit import FormView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import UserRegisterForm, LoginForm, UpdatePasswordForm
 from .models import User
+
+   
 
 class UserRegisterView(FormView):
     template_name = 'users/register.html'
@@ -24,7 +26,8 @@ class UserRegisterView(FormView):
             nombres=form.cleaned_data['nombres'],
             apellidos=form.cleaned_data['apellidos'],
             genero=form.cleaned_data['genero'],
-        )
+            image_user = form.cleaned_data['image_user'],
+                  )
                 
         return super(UserRegisterView, self).form_valid(form)
 

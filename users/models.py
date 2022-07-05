@@ -18,7 +18,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     genero = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
     codregistro = models.CharField(max_length=6, blank=True)
     image_user = models.ImageField(upload_to = 'image_user', blank = True , null = True)
-    
+    link = models.CharField(max_length=300, blank=True)
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'username'

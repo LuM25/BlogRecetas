@@ -57,7 +57,7 @@ class LogoutView(View):
 class UpdatePasswordView(LoginRequiredMixin, FormView):
     template_name = 'users/update.html'
     form_class = UpdatePasswordForm
-    success_url = reverse_lazy('home_app:user_login')
+    success_url = reverse_lazy('users_app:user_login')
     login_url = reverse_lazy('users_app:user_login')
 
     def form_valid(self, form):
@@ -69,7 +69,7 @@ class UpdatePasswordView(LoginRequiredMixin, FormView):
 
         if user:
             new_password = form.cleaned_data['password2']
-            usuario.user.set_password(new_password)
+            usuario.set_password(new_password)
             usuario.save()
 
             logout(self.request)

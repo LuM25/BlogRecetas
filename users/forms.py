@@ -74,6 +74,18 @@ class LoginForm(forms.Form):
 
 class UpdatePasswordForm(forms.Form):
 
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'email',
+            'nombres',
+            'apellidos',
+            'genero',
+            'image_user',
+            'link',
+        )
+
     password1 = forms.CharField(
         label='Contraseña',
         required=True,
@@ -92,3 +104,4 @@ class UpdatePasswordForm(forms.Form):
             }
         )
     )
+

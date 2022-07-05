@@ -8,8 +8,7 @@ from django.views.generic.edit import FormView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import UserRegisterForm, LoginForm, UpdatePasswordForm
-from .models import User
-
+from users.models import User
    
 
 class UserRegisterView(FormView):
@@ -27,6 +26,7 @@ class UserRegisterView(FormView):
             apellidos=form.cleaned_data['apellidos'],
             genero=form.cleaned_data['genero'],
             image_user = form.cleaned_data['image_user'],
+            link = form.cleaned_data['link']
                   )
                 
         return super(UserRegisterView, self).form_valid(form)
@@ -68,6 +68,8 @@ class UpdatePasswordView(LoginRequiredMixin, FormView):
             new_password = form.cleaned_data['password2']
             usuario.set_password(new_password)
             usuario.save()
+
+
 
             logout(self.request)
         return super(UpdatePasswordView, self).form_valid(form)

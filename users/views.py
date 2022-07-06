@@ -63,12 +63,16 @@ class UpdatePasswordView(LoginRequiredMixin, FormView):
             username = usuario.username,
             password = form.cleaned_data['password1']
         )
-
         if user:
             new_password = form.cleaned_data['password2']
-            usuario.set_password(new_password)
-            usuario.save()
-
+            user.image_user = form.cleaned_data['geeks_field']
+            user.nombres = form.cleaned_data['nombres']
+            user.apellidos = form.cleaned_data['apellidos']
+            user.link = form.cleaned_data['link']
+            user.email = form.cleaned_data['email']
+            user.set_password(new_password)
+            user.save()
+            
 
 
             logout(self.request)

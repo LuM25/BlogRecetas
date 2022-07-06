@@ -84,7 +84,13 @@ class UpdatePasswordForm(forms.Form):
             'genero',
             'image_user',
             'link',
+            'geeks_field'
         )
+    email= forms.EmailField(label="Nuevo email", required=False)   
+    nombres= forms.CharField(label="Nuevo nombre", required=False)
+    apellidos= forms.CharField(label="Nuevo apellido", required=False)
+    geeks_field = forms.FileField(label="Nueva imagen", required=False)
+    link= forms.CharField(label="Nuedo link", required=False)
 
     password1 = forms.CharField(
         label='Contraseña',
@@ -104,4 +110,9 @@ class UpdatePasswordForm(forms.Form):
             }
         )
     )
+    email= forms.EmailField(label="Nuevo email", required=False)   
+    nombres= forms.CharField(label="Nuevo nombre", required=False)
+    apellidos= forms.CharField(label="Nuevo apellido", required=False)
+    geeks_field = forms.FileField(label="Nueva imagen", required=False)
+    link= forms.CharField(label="Nuedo link", required=False)
 
